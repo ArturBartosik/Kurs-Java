@@ -12,7 +12,7 @@ public class ProgramPoint {
   }
 
   public static double distance(Point firstPoint,Point secondPoint) {
-     double result = Math.sqrt((firstPoint.x - secondPoint.x) * (firstPoint.x - secondPoint.x)) + Math.sqrt((firstPoint.y - secondPoint.y) * (firstPoint.y - secondPoint.y));
+     double result = Math.sqrt((firstPoint.x - secondPoint.x) * (firstPoint.x - secondPoint.x) + (firstPoint.y - secondPoint.y) * (firstPoint.y - secondPoint.y));
     return result;
   }
 }
