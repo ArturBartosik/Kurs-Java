@@ -14,17 +14,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 import static org.openqa.selenium.OutputType.*;
 
-public class GroupCreationTests {
+public class GroupCreationTest {
     FirefoxDriver wd;
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
+        wd = new FirefoxDriver();
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
     @Test
-    public void GroupCreationTests() {
+    public void GroupCreationTest() {
         wd.get("http://localhost/addressbook/");
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).clear();
@@ -38,6 +38,7 @@ public class GroupCreationTests {
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
         wd.findElement(By.name("group_name")).sendKeys("test1");
+        wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).clear();
         wd.findElement(By.name("group_header")).sendKeys("test2");
