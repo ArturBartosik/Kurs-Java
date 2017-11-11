@@ -11,9 +11,8 @@ public class ApplicationManager {
 
   private SessionHelper sessionhelper;
   private NavigationHelper navigationHelper;
-  private GroupHelper groupHelper);
+  private GroupHelper groupHelper;
 
-  }
 
   public void init() {
     wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
@@ -22,10 +21,8 @@ public class ApplicationManager {
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionhelper = new SessionHelper(wd);
-    SessionHelper.login("admin", "secret");
+    sessionhelper.login("admin", "secret");
   }
-
-
 
   public void stop() {
     wd.quit();
